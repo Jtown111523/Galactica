@@ -20,8 +20,6 @@ public class FireScript : MonoBehaviour {
 
         if (Input.GetButtonDown("Jump"))
         {
-            Debug.Log("Fire");
-
             //fires projectile from player
 
             GameObject bullet = Instantiate(bulletPrefab, spawnLoc, Quaternion.identity);
