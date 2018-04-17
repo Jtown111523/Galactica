@@ -13,11 +13,16 @@ public class destroyBullet : MonoBehaviour {
 
     private void OnTriggerEnter2D(Collider2D col)
     {
-        Destroy(col.gameObject);
+        if(col.gameObject.tag == "Bullet")
+        {
+            Destroy(col.gameObject);
+        }
+        
 
         if(col.gameObject.tag == "Meteor" || col.gameObject.tag == "RedMeteor")
         {
             scoreKeeper.score -= 50f;
+            Destroy(col.gameObject);
         }
     }
 
