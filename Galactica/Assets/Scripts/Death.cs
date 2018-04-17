@@ -10,12 +10,10 @@ public class Death : MonoBehaviour {
         if(col.gameObject.tag == "Meteor")
         {
             //end game
-            Debug.Log("end Game");
-
             Destroy(col.gameObject);
             Destroy(this.gameObject);
 
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+            SceneManager.LoadScene("EndScreen");
         }
     }
 

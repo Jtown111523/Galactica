@@ -20,4 +20,14 @@ public class ButtonMNGR : MonoBehaviour {
         Application.Quit();
         Debug.Log("Quit");
     }
+
+    public void homeButtonPress()
+    {
+        SceneManager.LoadScene("StartScreen");
+    }
+
+    public void playAgainButtonPress()
+    {
+        SceneManager.LoadScene("Level01");
+    }
 }

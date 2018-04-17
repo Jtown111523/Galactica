@@ -18,6 +18,8 @@ public class MeteorSpawn : MonoBehaviour {
 
     public GameObject meteorPrefab;
 
+    public GameObject redMeteorPrefab;
+
     GameObject meteor;
 	
 	// Update is called once per frame
@@ -26,9 +28,26 @@ public class MeteorSpawn : MonoBehaviour {
 
         if(timer<= 0)
         {
-            meteor = Instantiate(meteorPrefab, new Vector3(Random.Range(MinX, MaxX), YVal, 0), Quaternion.identity);
-            meteor.GetComponent<Rigidbody2D>().velocity = Vector3.down * meteorVelocity;
-            timer = timeToNextSpawn;
+            int i = Random.Range(0, 20);
+            Debug.Log(i);
+            if (i != 1)
+            {
+                meteor = Instantiate(meteorPrefab, new Vector3(Random.Range(MinX, MaxX), YVal, 0), Quaternion.identity);
+                meteor.GetComponent<Rigidbody2D>().velocity = Vector3.down * meteorVelocity;
+                //timeChanger = timeChanger + change;
+                timer = timeToNextSpawn;
+                //Debug.Log(timer);
+            }
+
+            if(i == 1)
+            {
+                //spawn red Meteor
+                meteor = Instantiate(redMeteorPrefab, new Vector3(Random.Range(MinX, MaxX), YVal, 0), Quaternion.identity);
+                meteor.GetComponent<Rigidbody2D>().velocity = Vector3.down * meteorVelocity;
+                //timeChanger = timeChanger + change;
+                timer = timeToNextSpawn;
+                //Debug.Log(timer);
+            }
         }
 		
 	}
