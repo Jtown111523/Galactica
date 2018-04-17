@@ -8,8 +8,6 @@ public class meteorCollision : MonoBehaviour {
     {
         if (col.gameObject.tag == "Bullet")
         {
-
-            Debug.Log(col.gameObject.tag);
             Destroy(col.gameObject);
             Destroy(this.gameObject);
         }
