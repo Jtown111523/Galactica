@@ -12,7 +12,14 @@ public class FireScript : MonoBehaviour {
 
     private Vector3 spawnLoc;
 
-    // Update is called once per frame
+    audioManager Audio;
+
+
+    private void Awake()
+    {
+        Audio = FindObjectOfType<audioManager>();
+    }
+
     void Update () {
 
         playerPos = GetComponent<Transform>();
@@ -25,6 +32,9 @@ public class FireScript : MonoBehaviour {
             GameObject bullet = Instantiate(bulletPrefab, spawnLoc, Quaternion.identity);
 
             bullet.GetComponent<Rigidbody2D>().velocity = bullet.transform.up * projectileVelocity;
+
+            //play sound
+            Audio.Play("Laser");
 
         }
 		

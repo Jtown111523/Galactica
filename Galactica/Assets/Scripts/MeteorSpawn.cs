@@ -29,7 +29,6 @@ public class MeteorSpawn : MonoBehaviour {
         if(timer<= 0)
         {
             int i = Random.Range(0, 20);
-            Debug.Log(i);
             if (i != 1)
             {
                 meteor = Instantiate(meteorPrefab, new Vector3(Random.Range(MinX, MaxX), YVal, 0), Quaternion.identity);
