@@ -21,8 +21,8 @@ GameObject:
   - component: {fileID: 4213485299616290}
   - component: {fileID: 212851531386171070}
   - component: {fileID: 50571225093588910}
-  - component: {fileID: 58656748646126616}
   - component: {fileID: 114012871527343806}
+  - component: {fileID: 60157232083968886}
   m_Layer: 0
   m_Name: RedMeteor
   m_TagString: RedMeteor
@@ -63,8 +63,8 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!58 &58656748646126616
-CircleCollider2D:
+--- !u!60 &60157232083968886
+PolygonCollider2D:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
@@ -76,8 +76,36 @@ CircleCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 0.84
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1.19, y: 1.18}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: 0.59499997, y: 0.25}
+      - {x: 0.555, y: 0.32}
+      - {x: 0.375, y: 0.5}
+      - {x: 0.275, y: 0.59}
+      - {x: -0.044999998, y: 0.59}
+      - {x: -0.24499999, y: 0.58}
+      - {x: -0.415, y: 0.47}
+      - {x: -0.53499997, y: 0.32999998}
+      - {x: -0.59499997, y: 0.21}
+      - {x: -0.59499997, y: -0.04}
+      - {x: -0.585, y: -0.11}
+      - {x: -0.415, y: -0.29}
+      - {x: -0.42499998, y: -0.39999998}
+      - {x: -0.305, y: -0.59}
+      - {x: 0.035, y: -0.59}
+      - {x: 0.074999996, y: -0.58}
+      - {x: 0.305, y: -0.5}
+      - {x: 0.525, y: -0.26999998}
+      - {x: 0.59499997, y: 0.03}
 --- !u!114 &114012871527343806
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -125,8 +153,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: fb4bf1dd2d09ef24bbdd745cd12a51dd, type: 3}
-  m_Color: {r: 1, g: 0, b: 0, a: 1}
+  m_Sprite: {fileID: 21300018, guid: 654d602da0dc33749877958f6905ea80, type: 3}
+  m_Color: {r: 1, g: 0, b: 0.697, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
