@@ -13,6 +13,7 @@ public class ButtonMNGR : MonoBehaviour {
     public void optionsButtonPress()
     {
         //send to options screen
+        SceneManager.LoadScene("OptionsScreen");
     }
 
     public void quitButtonPress()
