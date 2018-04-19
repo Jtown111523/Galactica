@@ -297,13 +297,25 @@ MonoBehaviour:
   sounds:
   - name: Theme
     clip: {fileID: 8300000, guid: 74e648a354b8e0f4ab432f1c93c27059, type: 3}
-    volume: 0.1
+    volume: 0.2
     pitch: 1
     loop: 1
     source: {fileID: 0}
   - name: Laser
     clip: {fileID: 8300000, guid: 1548161c78c7b084db33c6c7b8749b25, type: 3}
     volume: 0.2
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: Meteor Explosion
+    clip: {fileID: 8300000, guid: 078e1b1a521a0ca4f908d52f6bb3ab58, type: 3}
+    volume: 0.3
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: Button Click
+    clip: {fileID: 8300000, guid: 39f967040205ebb41ab4d4023ab5f22b, type: 3}
+    volume: 0.4
     pitch: 1
     loop: 0
     source: {fileID: 0}

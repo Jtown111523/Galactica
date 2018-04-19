@@ -7,18 +7,20 @@ using UnityEngine.SceneManagement;
 public class ScoreKeeper : MonoBehaviour
 {
 
-    public float score = 0f;
+    public int score = 0;
 
     [HideInInspector]
-    public float meteorWorth;
+    public int meteorWorth;
 
     public Text playerScoreText;
+
+
 
     // Update is called once per frame
     void Update()
     {
 
-        playerScoreText.text = score.ToString();
+        playerScoreText.text = score.ToString("0");
 
         if (score <= 0)
         {
@@ -34,6 +36,6 @@ public class ScoreKeeper : MonoBehaviour
 
     public void addToScoreRed()
     {
-        score = score + (meteorWorth * 1.5f);
+        score = score + (meteorWorth * 2);
     }
 }

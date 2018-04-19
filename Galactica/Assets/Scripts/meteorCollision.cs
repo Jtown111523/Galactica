@@ -7,6 +7,7 @@ public class meteorCollision : MonoBehaviour {
     public ScoreKeeper scoreKeeper;
     public MeteorSpawn meteorSpawn;
     GameObject explosionPrefab;
+    audioManager Audio;
 
     public void Start()
     {
@@ -14,6 +15,7 @@ public class meteorCollision : MonoBehaviour {
         meteorSpawn = FindObjectOfType<MeteorSpawn>();
         scoreKeeper.meteorWorth = Random.Range(0, 10) * 10;
         explosionPrefab = (GameObject)Resources.Load("Explosion");
+        Audio = FindObjectOfType<audioManager>();
     }
 
     private void OnTriggerEnter2D(Collider2D col)
@@ -22,6 +24,8 @@ public class meteorCollision : MonoBehaviour {
         {
             Destroy(col.gameObject);
             Destroy(this.gameObject);
+
+            Audio.Play("Meteor Explosion");
 
             Instantiate(explosionPrefab, this.gameObject.transform.position, Quaternion.identity);
 

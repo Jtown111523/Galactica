@@ -21,7 +21,7 @@ public class destroyBullet : MonoBehaviour {
 
         if(col.gameObject.tag == "Meteor" || col.gameObject.tag == "RedMeteor")
         {
-            scoreKeeper.score -= 50f;
+            scoreKeeper.score -= 50;
             Destroy(col.gameObject);
         }
     }
