@@ -6,12 +6,14 @@ public class meteorCollision : MonoBehaviour {
 
     public ScoreKeeper scoreKeeper;
     public MeteorSpawn meteorSpawn;
+    GameObject explosionPrefab;
 
     public void Start()
     {
         scoreKeeper = FindObjectOfType<ScoreKeeper>();
         meteorSpawn = FindObjectOfType<MeteorSpawn>();
         scoreKeeper.meteorWorth = Random.Range(0, 10) * 10;
+        explosionPrefab = (GameObject)Resources.Load("Explosion");
     }
 
     private void OnTriggerEnter2D(Collider2D col)
@@ -20,6 +22,8 @@ public class meteorCollision : MonoBehaviour {
         {
             Destroy(col.gameObject);
             Destroy(this.gameObject);
+
+            Instantiate(explosionPrefab, this.gameObject.transform.position, Quaternion.identity);
 
             //decrease time between spawns
 
