@@ -33,6 +33,7 @@ public class MeteorSpawn : MonoBehaviour {
             {
                 meteor = Instantiate(meteorPrefab, new Vector3(Random.Range(MinX, MaxX), YVal, 0), Quaternion.identity);
                 meteor.GetComponent<Rigidbody2D>().velocity = Vector3.down * meteorVelocity;
+                meteor.GetComponent<Rigidbody2D>().AddTorque(5f);
                 //timeChanger = timeChanger + change;
                 timer = timeToNextSpawn;
                 //Debug.Log(timer);
