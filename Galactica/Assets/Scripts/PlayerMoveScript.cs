@@ -16,7 +16,7 @@ public class PlayerMoveScript : MonoBehaviour {
 
     private Vector2 playerPos;
 
-    bool hasShield = true;
+    int shieldCount;
 
     public GameObject shield;
 
@@ -26,6 +26,8 @@ public class PlayerMoveScript : MonoBehaviour {
         player = GetComponent<Transform>();
 
         playerPos = new Vector2(0, playerYPos);
+
+        shieldCount = PlayerPrefs.GetInt("ShieldCount");
 		
 	}
 	
@@ -56,10 +58,11 @@ public class PlayerMoveScript : MonoBehaviour {
 
         //FOR SHIELD START  
 
-        if (Input.GetKeyDown(KeyCode.LeftShift) && hasShield == true)
+        if (Input.GetKeyDown(KeyCode.LeftShift) && shieldCount > 0)
         {
             shield.gameObject.SetActive(true);
-            hasShield = false;
+            shieldCount--;
+            PlayerPrefs.SetInt("ShieldCount", shieldCount);
         }
 	}
 }

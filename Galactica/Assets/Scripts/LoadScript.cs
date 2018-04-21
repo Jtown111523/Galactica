@@ -42,6 +42,12 @@ public class LoadScript : MonoBehaviour {
         Audio.Play("Button Click");
     }
 
+    public void upgradesButton()
+    {
+        anim = 5;
+        Audio.Play("Button Click");
+    }
+
 
 	public void loadScreen()
     {
@@ -64,6 +70,10 @@ public class LoadScript : MonoBehaviour {
         {
             //quits game
             Application.Quit();
+        }
+        else if (anim == 5)
+        {
+            SceneManager.LoadScene("UpgradesScreen");
         }
     }
 }
