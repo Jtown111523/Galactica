@@ -4,10 +4,19 @@ using UnityEngine;
 
 public class shieldmovement : MonoBehaviour {
 
-    public Transform player;
-	
-	// Update is called once per frame
-	void Update () {
+
+    Transform player;
+
+    private void OnTriggerEnter2D(Collider2D col)
+    {
+        if(col.gameObject.tag == "Player")
+        {
+            player = col.GetComponent<Transform>();
+        }
+    }
+
+    // Update is called once per frame
+    void Update () {
 
         this.transform.position = player.position;
 		

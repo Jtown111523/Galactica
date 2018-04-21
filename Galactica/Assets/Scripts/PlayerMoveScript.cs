@@ -20,6 +20,9 @@ public class PlayerMoveScript : MonoBehaviour {
 
     public GameObject shield;
 
+    [HideInInspector]
+    public bool shieldOut = false;
+
 	// Use this for initialization
 	void Start () {
 
@@ -28,6 +31,8 @@ public class PlayerMoveScript : MonoBehaviour {
         playerPos = new Vector2(0, playerYPos);
 
         shieldCount = PlayerPrefs.GetInt("ShieldCount");
+
+        shield = (GameObject)Resources.Load("Shield");
 		
 	}
 	
@@ -58,9 +63,10 @@ public class PlayerMoveScript : MonoBehaviour {
 
         //FOR SHIELD START  
 
-        if (Input.GetKeyDown(KeyCode.LeftShift) && shieldCount > 0)
+        if (Input.GetKeyDown(KeyCode.LeftShift) && shieldCount > 0 && shieldOut == false)
         {
-            shield.gameObject.SetActive(true);
+            Instantiate(shield, this.gameObject.transform.position, new Quaternion(0,0,180,0));
+            shieldOut = true;
             shieldCount--;
             PlayerPrefs.SetInt("ShieldCount", shieldCount);
         }

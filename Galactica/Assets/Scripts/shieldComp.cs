@@ -7,10 +7,12 @@ public class shieldComp : MonoBehaviour {
     int shieldLives = 10;
 
     GameObject shieldExplosion;
+    PlayerMoveScript playerMoveScript;
 
     private void Start()
     {
         shieldExplosion = (GameObject)Resources.Load("ShieldExplosion");
+        playerMoveScript = FindObjectOfType<PlayerMoveScript>();
     }
 
     private void OnTriggerEnter2D(Collider2D col)
@@ -23,6 +25,7 @@ public class shieldComp : MonoBehaviour {
             {
                 Destroy(this.gameObject);
                 Instantiate(shieldExplosion, this.gameObject.transform.position, Quaternion.identity);
+                playerMoveScript.shieldOut = false;
             }
         }
     }

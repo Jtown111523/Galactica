@@ -15,12 +15,18 @@ public class upgradeBuy : MonoBehaviour {
 
     public Button shieldButton;
 
+    public Text totalPointsText;
+
+    public Text costText;
+
     private void Awake()
     {
         totalPoints = PlayerPrefs.GetInt("totalScore");
         shieldCount = PlayerPrefs.GetInt("ShieldCount");
         numberText.text = "Currently Owned: " + PlayerPrefs.GetInt("ShieldCount").ToString("0");
         checkIfInteractable();
+        totalPointsText.text = "Spending Points: " + totalPoints.ToString("0");
+        costText.text = "Cost: " + shieldCost.ToString("0");
     }
 
     public void buyShield()
@@ -31,6 +37,7 @@ public class upgradeBuy : MonoBehaviour {
             totalPoints = PlayerPrefs.GetInt("totalScore");
             totalPoints = totalPoints - shieldCost;
             PlayerPrefs.SetInt("totalScore", totalPoints);
+            totalPointsText.text = "Spending Points: " + totalPoints.ToString("0");
 
             //add to shield count
             shieldCount = PlayerPrefs.GetInt("ShieldCount");
@@ -41,7 +48,7 @@ public class upgradeBuy : MonoBehaviour {
 
             numberText.text = "Currently Owned: " + PlayerPrefs.GetInt("ShieldCount").ToString("0");
 
-            Debug.Log(totalPoints);
+            //Debug.Log(totalPoints);
         }
         checkIfInteractable();
     }
