@@ -23,15 +23,13 @@ public class meteorCollision : MonoBehaviour {
         if (col.gameObject.tag == "Bullet")
         {
             Destroy(col.gameObject);
-            Destroy(this.gameObject);
-
-            Audio.Play("Meteor Explosion");
-
-            Instantiate(explosionPrefab, this.gameObject.transform.position, Quaternion.identity);
+            destroyMeteor();
 
             //decrease time between spawns
 
             meteorSpawn.timeToNextSpawn -= .0025f;
+
+            scoreKeeper.scoreMultiplier = scoreKeeper.scoreMultiplier + .1f;
 
             //add to score
             if(this.gameObject.tag == "RedMeteor")
@@ -46,6 +44,15 @@ public class meteorCollision : MonoBehaviour {
 
         }
 
+    }
+
+    public void destroyMeteor()
+    {
+        Destroy(this.gameObject);
+
+        Audio.Play("Meteor Explosion");
+
+        Instantiate(explosionPrefab, this.gameObject.transform.position, Quaternion.identity);
     }
 
 }

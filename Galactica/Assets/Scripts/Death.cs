@@ -9,6 +9,8 @@ public class Death : MonoBehaviour {
 
     GameObject meteorPrefab;
 
+    audioManager Audio;
+
     int highScore;
 
     int totalScore;
@@ -17,6 +19,7 @@ public class Death : MonoBehaviour {
     {
         meteorPrefab = (GameObject)Resources.Load("Explosion");
         scoreKeeper = FindObjectOfType<ScoreKeeper>();
+        Audio = FindObjectOfType<audioManager>();
     }
 
     private void OnTriggerEnter2D(Collider2D col)
@@ -26,6 +29,8 @@ public class Death : MonoBehaviour {
             //end game
             Destroy(col.gameObject);
             Destroy(this.gameObject);
+
+            Audio.Play("Meteor Explosion");
 
             Instantiate(meteorPrefab, this.gameObject.transform.position, Quaternion.identity);
 
@@ -42,14 +47,15 @@ public class Death : MonoBehaviour {
         if (scoreKeeper.score > highScore)
         {
             //sets new high score
-            PlayerPrefs.SetInt("highScore", scoreKeeper.score);
+            PlayerPrefs.SetInt("highScore", (int)scoreKeeper.score);
             highScore = PlayerPrefs.GetInt("highScore");
+            PlayerPrefs.SetInt("newHighScore", 1);
             //Debug.Log("HighScore: " + highScore);
         }
 
 
         //adds to total score visible from startScreen
-        totalScore = PlayerPrefs.GetInt("totalScore") + scoreKeeper.score;
+        totalScore = PlayerPrefs.GetInt("totalScore") + (int)scoreKeeper.score;
         PlayerPrefs.SetInt("totalScore", totalScore);
 
         //Debug.Log("Total Score: " + totalScore);

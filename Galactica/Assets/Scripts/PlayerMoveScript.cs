@@ -16,6 +16,10 @@ public class PlayerMoveScript : MonoBehaviour {
 
     private Vector2 playerPos;
 
+    bool hasShield = true;
+
+    public GameObject shield;
+
 	// Use this for initialization
 	void Start () {
 
@@ -47,6 +51,15 @@ public class PlayerMoveScript : MonoBehaviour {
         playerPos.x = Mathf.Clamp(playerPos.x, min, max);
 
         this.transform.position = playerPos;
-		
+
+
+
+        //FOR SHIELD START  
+
+        if (Input.GetKeyDown(KeyCode.LeftShift) && hasShield == true)
+        {
+            shield.gameObject.SetActive(true);
+            hasShield = false;
+        }
 	}
 }

@@ -7,10 +7,12 @@ using UnityEngine.SceneManagement;
 public class ScoreKeeper : MonoBehaviour
 {
 
-    public int score = 0;
+    public float score = 0;
 
     [HideInInspector]
-    public int meteorWorth;
+    public float meteorWorth;
+
+    public float scoreMultiplier = 1;
 
     public Text playerScoreText;
 
@@ -31,11 +33,11 @@ public class ScoreKeeper : MonoBehaviour
 
     public void addToScoreNorm()
     {
-        score = score + meteorWorth;
+        score = score + (meteorWorth * scoreMultiplier);
     }
 
     public void addToScoreRed()
     {
-        score = score + (meteorWorth * 2);
+        score = score + ((meteorWorth * 2) * scoreMultiplier);
     }
 }
