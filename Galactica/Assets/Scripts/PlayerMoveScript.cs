@@ -33,6 +33,8 @@ public class PlayerMoveScript : MonoBehaviour {
         shieldCount = PlayerPrefs.GetInt("ShieldCount");
 
         shield = (GameObject)Resources.Load("Shield");
+
+        Cursor.lockState = CursorLockMode.Locked;
 		
 	}
 	

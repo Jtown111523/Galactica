@@ -5,6 +5,8 @@ using UnityEngine;
 public class FireScript : MonoBehaviour {
 
     public GameObject bulletPrefab;
+    public GameObject bulletPrefab2;
+    public GameObject bulletPrefab3;
 
     public float projectileVelocity;
 
@@ -14,10 +16,13 @@ public class FireScript : MonoBehaviour {
 
     audioManager Audio;
 
+    Vector3 offset;
+
 
     private void Awake()
     {
         Audio = FindObjectOfType<audioManager>();
+
     }
 
     void Update () {
@@ -29,12 +34,16 @@ public class FireScript : MonoBehaviour {
         {
             //fires projectile from player
 
-            GameObject bullet = Instantiate(bulletPrefab, spawnLoc, Quaternion.identity);
-
-            bullet.GetComponent<Rigidbody2D>().velocity = bullet.transform.up * projectileVelocity;
+            
+            GameObject bullet1 = Instantiate(bulletPrefab, spawnLoc, Quaternion.identity);
+            bullet1.GetComponent<Rigidbody2D>().velocity = bullet1.transform.up * projectileVelocity;
 
             //play sound
             Audio.Play("Laser");
+
+
+
+
 
         }
 		

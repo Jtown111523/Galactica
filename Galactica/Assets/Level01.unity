@@ -901,7 +901,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1802580891205108, guid: 0232ff4a7badbf6439964880a3d3a944, type: 2}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 0232ff4a7badbf6439964880a3d3a944, type: 2}
@@ -1477,6 +1477,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bulletPrefab: {fileID: 1956815474843886, guid: 7d35a1bc370567e4e8d8b3493a2e76dc,
+    type: 2}
+  bulletPrefab2: {fileID: 1956815474843886, guid: 8499a4fecbdf4fe429047add0f26a40e,
+    type: 2}
+  bulletPrefab3: {fileID: 1956815474843886, guid: 4d82e5ec400cef345b48a98db6426160,
     type: 2}
   projectileVelocity: 15
 --- !u!114 &2014899346

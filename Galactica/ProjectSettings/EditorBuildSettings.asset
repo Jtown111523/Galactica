@@ -12,9 +12,6 @@ EditorBuildSettings:
     path: Assets/UpgradesScreen.unity
     guid: 8b88de221c34bdb46a41878ea98739bc
   - enabled: 1
-    path: Assets/OptionsScreen.unity
-    guid: 36419add0480ff34dafa46ccb078bed6
-  - enabled: 1
     path: Assets/Level01.unity
     guid: 3767e51fb7b23c0478e60486e1c76f61
   - enabled: 1

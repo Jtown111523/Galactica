@@ -23,6 +23,7 @@ GameObject:
   - component: {fileID: 50571225093588910}
   - component: {fileID: 114012871527343806}
   - component: {fileID: 60157232083968886}
+  - component: {fileID: 114052396109078554}
   m_Layer: 0
   m_Name: RedMeteor
   m_TagString: RedMeteor
@@ -119,6 +120,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scoreKeeper: {fileID: 0}
   meteorSpawn: {fileID: 0}
+--- !u!114 &114052396109078554
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1905096860492286}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3c51b17795e745b47b6967f7338c3db5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!212 &212851531386171070
 SpriteRenderer:
   m_ObjectHideFlags: 1
