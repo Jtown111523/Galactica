@@ -36,6 +36,7 @@ public class MeteorSpawn : MonoBehaviour {
                 //meteor.GetComponent<Rigidbody2D>().AddTorque(5f);
                 //timeChanger = timeChanger + change;
                 timer = timeToNextSpawn;
+                timeToNextSpawn = Mathf.Clamp(timeToNextSpawn, 0.25f, 100);
                 //Debug.Log(timer);
             }
 
@@ -47,9 +48,12 @@ public class MeteorSpawn : MonoBehaviour {
                 //meteor.GetComponent<Rigidbody2D>().AddTorque(5f);
                 //timeChanger = timeChanger + change;
                 timer = timeToNextSpawn;
+                timeToNextSpawn = Mathf.Clamp(timeToNextSpawn, 0.25f, 100);
                 //Debug.Log(timer);
             }
         }
+
+        Debug.Log(timeToNextSpawn);
 		
 	}
 }
